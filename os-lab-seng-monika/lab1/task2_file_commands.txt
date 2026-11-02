@@ -1,0 +1,13 @@
+/home/gic-seng-monika/oslab-work/lab1/task2_files
+cloud.txt
+lemon.txt
+This is file lemon
+This is file cloud
+cloud.txt
+lemon.txt
+lemon_copy.txt
+cloud_renamed.txt
+lemon.txt
+lemon_copy.txt
+cloud_renamed.txt
+lemon.txt
