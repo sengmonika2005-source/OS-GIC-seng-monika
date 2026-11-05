@@ -1,0 +1,7 @@
+<practice/hard-demo.txt>
+<practice/report1.txt>
+<practice/report2.txt>
+<practice/soft-demo.txt>
+<practice/report1.txt>
+<practice/report2.txt>
+<practice/*.txt>
