@@ -1,0 +1,21 @@
+# Task 1 — File Creator and Reader
+# Compilation commands
+
+gcc -o file_creator_lib file_creator_lib.c
+gcc -o file_creator_sys file_creator_sys.c
+gcc -o file_reader_lib file_reader_lib.c
+gcc -o file_reader_sys file_reader_sys.c
+
+# Execute file creators
+./file_creator_lib
+./file_creator_sys
+
+# Display created file
+cat output.txt
+
+# Execute file readers
+./file_reader_lib
+./file_reader_sys
+
+# Expected file content
+# Hello from Operating Systems class!

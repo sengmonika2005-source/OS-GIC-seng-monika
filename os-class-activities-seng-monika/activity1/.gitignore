@@ -1,0 +1,13 @@
+# Compiled executables
+hello_syscall
+copyfilesyscall
+task1/file_creator_lib
+task1/file_creator_sys
+task1/file_reader_lib
+task1/file_reader_sys
+task2/dir_list_lib
+task2/dir_list_sys
+
+# Temporary files
+*.o
+*~

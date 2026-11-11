@@ -1,0 +1,13 @@
+# Task 2 — Directory Listing
+# Compilation commands
+
+gcc -o dir_list_lib dir_list_lib.c
+gcc -o dir_list_sys dir_list_sys.c
+
+# Execute both versions
+./dir_list_lib
+./dir_list_sys
+
+# Both programs display filenames and file sizes.
+# The library version uses printf().
+# The system-call version uses snprintf() and write().
