@@ -1,0 +1,28 @@
+$ gcc -Wall -Wextra -o forkchild forkchild.c
+[exit status: 0]
+
+$ ./forkchild > result_forkchild.txt 2>&1
+$ ps --forest -o pid,ppid,stat,args -p 11362,11363
+    PID    PPID STAT COMMAND
+  11362   11346 S+   ./forkchild
+  11363   11362 S+    \_ ./forkchild
+[exit status: 0]
+
+[exit status: 0]
+
+$ cat result_forkchild.txt
+Parent process (PID: 11362) - creating child...
+Parent: waiting for child (PID: 11363) to finish...
+Child process (PID: 11363, Parent PID: 11362)
+Child: sleeping 30s - observe the process tree now!
+Child: now executing 'ls -la'...
+total 40
+drwxr-xr-x 2 monika monika  4096 Nov 11 19:32 .
+drwxr-xr-x 8 monika monika  4096 Nov 11 19:32 ..
+-rwxr-xr-x 1 monika monika 16688 Nov 11 19:32 forkchild
+-rw-r--r-- 1 monika monika  1993 Nov 11 19:31 forkchild.c
+-rw-r--r-- 1 monika monika   150 Nov 11 19:32 process_tree.txt
+-rw-r--r-- 1 monika monika   231 Nov 11 19:33 result_forkchild.txt
+Parent: child exited with status 0
+Parent: done.
+[exit status: 0]

@@ -1,0 +1,9 @@
+# Commands actually executed by verify_linux.py, in this task directory.
+gcc -Wall -Wextra -o shm-producer shm-producer.c -lrt
+gcc -Wall -Wextra -o shm-consumer shm-consumer.c -lrt
+./shm-consumer
+./shm-producer
+./shm-producer
+./shm-consumer > result-shm-ipc.txt
+cat result-shm-ipc.txt
+./shm-consumer

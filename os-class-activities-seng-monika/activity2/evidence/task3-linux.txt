@@ -1,0 +1,34 @@
+$ gcc -Wall -Wextra -o shm-producer shm-producer.c -lrt
+[exit status: 0]
+
+$ gcc -Wall -Wextra -o shm-consumer shm-consumer.c -lrt
+[exit status: 0]
+
+$ ./shm-consumer
+shm_open: No such file or directory
+Hint: Did you run shm-producer first?
+[exit status: 1]
+
+$ ./shm-producer
+Producer: wrote to shared memory '/OS-e20231167'
+Producer: message = "Hello, this is shared memory IPC!"
+[exit status: 0]
+
+$ ./shm-producer
+shm_open: File exists
+Hint: Consume an existing object before running the producer again.
+[exit status: 1]
+
+$ ./shm-consumer > result-shm-ipc.txt
+[exit status: 0]
+
+$ cat result-shm-ipc.txt
+Consumer: reading from shared memory '/OS-e20231167'
+Consumer: message = "Hello, this is shared memory IPC!"
+Consumer: shared memory unlinked.
+[exit status: 0]
+
+$ ./shm-consumer
+shm_open: No such file or directory
+Hint: Did you run shm-producer first?
+[exit status: 1]

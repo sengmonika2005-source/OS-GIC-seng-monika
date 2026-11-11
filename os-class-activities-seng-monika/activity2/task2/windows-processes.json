@@ -1,0 +1,20 @@
+[
+  {
+    "Name": "winprocess.exe",
+    "ProcessId": 20772,
+    "ParentProcessId": 21248,
+    "ExecutablePath": "\\\\wsl.localhost\\Ubuntu\\home\\monika\\os-gic-seng-monika-repo\\os-class-activities-seng-monika\\activity2\\task2\\winprocess.exe"
+  },
+  {
+    "Name": "conhost.exe",
+    "ProcessId": 24640,
+    "ParentProcessId": 20772,
+    "ExecutablePath": "C:\\WINDOWS\\system32\\conhost.exe"
+  },
+  {
+    "Name": "mspaint.exe",
+    "ProcessId": 588,
+    "ParentProcessId": 20772,
+    "ExecutablePath": "C:\\Program Files\\WindowsApps\\Microsoft.Paint_11.2609.401.0_x64__8wekyb3d8bbwe\\PaintApp\\mspaint.exe"
+  }
+]

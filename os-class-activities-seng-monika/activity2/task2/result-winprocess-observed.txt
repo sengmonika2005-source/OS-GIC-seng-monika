@@ -1,0 +1,7 @@
+Parent process (PID: 20772) - creating child...
+Application: C:\Program Files\WindowsApps\Microsoft.Paint_11.2609.401.0_x64__8wekyb3d8bbwe\PaintApp\mspaint.exe
+Child process created!
+  Child PID:       588
+  Child Thread ID: 24852
+Parent: waiting for child (mspaint) to exit...
+>>> Observe the processes, then close the launched Paint window. <<<

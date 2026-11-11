@@ -1,0 +1,9 @@
+# Commands actually executed by verify_linux.py, in this task directory.
+gcc -Wall -Wextra -o sender sender.c -lrt
+gcc -Wall -Wextra -o receiver receiver.c -lrt
+./receiver
+./sender
+cat /dev/mqueue/queue-e20231167
+./receiver > result-mq-ipc.txt
+cat result-mq-ipc.txt
+./receiver

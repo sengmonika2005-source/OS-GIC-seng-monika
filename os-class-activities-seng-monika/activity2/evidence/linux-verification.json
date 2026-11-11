@@ -1,0 +1,51 @@
+{
+  "environment": {
+    "uname": "Linux Mocha 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 GNU/Linux",
+    "gcc": "gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+    "os_release": "PRETTY_NAME=\"Ubuntu 26.04.1 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"26.04\"\nVERSION=\"26.04.1 LTS (Resolute Raccoon)\"\nVERSION_CODENAME=resolute\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=resolute\nLOGO=ubuntu-logo\n",
+    "date": "2026-11-11T19:32:45+07:00"
+  },
+  "checks": [
+    "No stale student shared memory object before testing",
+    "No stale student message queue before testing",
+    "task1: gcc -Wall -Wextra -o forkchild forkchild.c => 0",
+    "Child PID appeared before the 30-second sleep completed",
+    "Child's printed PPID equals the launched parent's PID",
+    "task1: ps --forest -o pid,ppid,stat,args -p 11362,11363 => 0",
+    "ps confirms the child-parent relationship while the child sleeps",
+    "forkchild exits successfully after ls -la",
+    "task1: cat result_forkchild.txt => 0",
+    "No duplicated pre-fork buffered output",
+    "ls -la output and successful child exit status are saved",
+    "task3_shm: gcc -Wall -Wextra -o shm-producer shm-producer.c -lrt => 0",
+    "task3_shm: gcc -Wall -Wextra -o shm-consumer shm-consumer.c -lrt => 0",
+    "task3_shm: ./shm-consumer => 1",
+    "Consumer-before-producer reports missing shared memory",
+    "task3_shm: ./shm-producer => 0",
+    "Shared memory object is exactly 4096 bytes",
+    "task3_shm: ./shm-producer => 1",
+    "Duplicate producer refuses to overwrite an unconsumed object",
+    "task3_shm: ./shm-consumer > result-shm-ipc.txt => 0",
+    "task3_shm: cat result-shm-ipc.txt => 0",
+    "Consumer receives the exact teacher message",
+    "Consumer removes the shared memory name",
+    "task3_shm: ./shm-consumer => 1",
+    "task4_mq: gcc -Wall -Wextra -o sender sender.c -lrt => 0",
+    "task4_mq: gcc -Wall -Wextra -o receiver receiver.c -lrt => 0",
+    "task4_mq: ./receiver => 1",
+    "Receiver-before-sender reports missing queue",
+    "task4_mq: ./sender => 0",
+    "Sender leaves a named queue for the receiver",
+    "task4_mq: cat /dev/mqueue/queue-e20231167 => 0",
+    "task4_mq: ./receiver > result-mq-ipc.txt => 0",
+    "task4_mq: cat result-mq-ipc.txt => 0",
+    "Receiver receives the exact teacher message",
+    "Receiver removes the message queue name",
+    "task4_mq: ./receiver => 1"
+  ],
+  "linux_process": {
+    "parent_pid": 11362,
+    "child_pid": 11363,
+    "exit_code": 0
+  }
+}

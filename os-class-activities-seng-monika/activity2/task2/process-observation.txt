@@ -1,0 +1,8 @@
+PS> Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -in @(20772,588) } | Select-Object Name,ProcessId,ParentProcessId
+
+Name           ProcessId ParentProcessId
+----           --------- ---------------
+winprocess.exe     20772           21248
+mspaint.exe          588           20772
+
+Parent remained running while Paint was open: verified.

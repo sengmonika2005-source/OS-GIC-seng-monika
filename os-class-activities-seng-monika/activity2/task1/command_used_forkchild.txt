@@ -1,0 +1,5 @@
+# Commands actually executed by verify_linux.py, in this task directory.
+gcc -Wall -Wextra -o forkchild forkchild.c
+./forkchild > result_forkchild.txt 2>&1
+ps --forest -o pid,ppid,stat,args -p 11362,11363
+cat result_forkchild.txt

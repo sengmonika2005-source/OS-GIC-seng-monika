@@ -1,0 +1,23 @@
+# Commands actually used on native Windows PowerShell (working directory: task2).
+gcc --version
+Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version,BuildNumber
+gcc -Wall -Wextra -o winprocess.exe winprocess.c
+.\winprocess.exe
+# Default path run: exit 1, CreateProcess error 2 (System32\mspaint.exe absent).
+Get-AppxPackage -Name Microsoft.Paint | Select-Object Name,InstallLocation
+$paintPath = Join-Path (Get-AppxPackage -Name Microsoft.Paint).InstallLocation 'PaintApp\mspaint.exe'
+# Actual automated run used absolute UNC paths for the following relative paths:
+$nativeProcess = Start-Process -FilePath .\winprocess.exe -ArgumentList ('"' + $paintPath + '"') -WorkingDirectory . -WindowStyle Hidden -RedirectStandardOutput .\result-winprocess.txt -RedirectStandardError .\stderr-winprocess.txt -PassThru
+Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -eq $nativeProcess.Id -or $_.ParentProcessId -eq $nativeProcess.Id } | Select-Object Name,ProcessId,ParentProcessId,ExecutablePath
+# Parent 20772 and Paint child 588 were observed while Paint was open.
+Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -in @(20772,588) } | Select-Object Name,ProcessId,ParentProcessId
+# The original PowerShell execution remains open to collect the eventual exit code:
+while (-not $nativeProcess.WaitForExit(1000)) { }
+$nativeProcess.Refresh()
+$nativeProcess.ExitCode
+# For a visible manual screenshot run, use this instead of Start-Process:
+# .\winprocess.exe $paintPath
+
+# Separate real lifecycle smoke test (does not interact with the student's Paint window):
+.\winprocess.exe C:\Windows\System32\whoami.exe
+# Exit status 0; this tests the wait, exit-code, and handle-close path with a short-lived child.

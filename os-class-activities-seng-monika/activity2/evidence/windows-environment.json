@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-11T19:39:28+07:00",
+  "operating_system": {
+    "Caption": "Microsoft Windows 11 Home",
+    "Version": "10.0.26200",
+    "BuildNumber": "26200"
+  },
+  "compiler": "gcc.exe (Rev2, Built by MSYS2 project) 14.2.0",
+  "compiler_path": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+  "paint_executable": "C:\\Program Files\\WindowsApps\\Microsoft.Paint_11.2609.401.0_x64__8wekyb3d8bbwe\\PaintApp\\mspaint.exe",
+  "default_system32_path_exists": false,
+  "default_path_exit_code": 1,
+  "default_path_CreateProcess_error": 2,
+  "successful_launch_parent_pid": 20772,
+  "successful_launch_child_pid": 588,
+  "successful_launch_child_thread_id": 24852,
+  "parent_waiting_while_child_alive": true
+}

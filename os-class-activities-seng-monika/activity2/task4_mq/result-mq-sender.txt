@@ -1,0 +1,2 @@
+Sender: message sent to queue '/queue-e20231167'
+Sender: message = "Hello from sender! This is message queue IPC."

@@ -1,0 +1,10 @@
+PASS: all 16 required code, result, command, and documentation files are present.
+PASS: all 20 teacher questions are included; drawing/screenshot work is explicitly reserved for the student.
+PASS: all 27 local README links resolve.
+PASS: verification script has valid Python syntax.
+PASS: 36 Linux checks recorded; neither student IPC resource remains.
+PASS: native Windows compilation, live Paint PPID relationship, and separate lifecycle smoke test verified.
+PENDING BY STUDENT REQUEST: process-tree drawing and all seven screenshot images; exact Task Manager views remain unverified.
+PENDING: final shutdown of the currently open Paint run; live logs are ignored, and a frozen observation is tracked.
+PASS: all six compiled executables are excluded by the Activity 2 .gitignore.
+PASS: existing tracked coursework is unchanged.

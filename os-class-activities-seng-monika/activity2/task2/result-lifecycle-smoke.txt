@@ -1,0 +1,11 @@
+PS> .\winprocess.exe C:\Windows\System32\whoami.exe
+Parent process (PID: 8316) - creating child...
+Application: C:\Windows\System32\whoami.exe
+Child process created!
+  Child PID:       17612
+  Child Thread ID: 19896
+Parent: waiting for child (mspaint) to exit...
+>>> Observe the processes, then close the launched Paint window. <<<
+mocha\user
+Parent: child has exited with status 0. Cleaning up.
+[winprocess.exe exit status: 0]

@@ -1,0 +1,13 @@
+/task1/forkchild
+/task2/winprocess.exe
+/task3_shm/shm-producer
+/task3_shm/shm-consumer
+/task4_mq/sender
+/task4_mq/receiver
+__pycache__/
+*.o
+
+# Live Paint logs finish when the student closes the window; the observed snapshot is tracked.
+/task2/result-winprocess.txt
+/task2/stderr-winprocess.txt
+/task2/exit-status.txt

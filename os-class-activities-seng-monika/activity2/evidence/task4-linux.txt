@@ -1,0 +1,33 @@
+$ gcc -Wall -Wextra -o sender sender.c -lrt
+[exit status: 0]
+
+$ gcc -Wall -Wextra -o receiver receiver.c -lrt
+[exit status: 0]
+
+$ ./receiver
+mq_open: No such file or directory
+Hint: Did you run sender first?
+[exit status: 1]
+
+$ ./sender
+Sender: message sent to queue '/queue-e20231167'
+Sender: message = "Hello from sender! This is message queue IPC."
+[exit status: 0]
+
+$ cat /dev/mqueue/queue-e20231167
+QSIZE:46         NOTIFY:0     SIGNO:0     NOTIFY_PID:0
+[exit status: 0]
+
+$ ./receiver > result-mq-ipc.txt
+[exit status: 0]
+
+$ cat result-mq-ipc.txt
+Receiver: message received from queue '/queue-e20231167'
+Receiver: message = "Hello from sender! This is message queue IPC."
+Receiver: queue unlinked.
+[exit status: 0]
+
+$ ./receiver
+mq_open: No such file or directory
+Hint: Did you run sender first?
+[exit status: 1]

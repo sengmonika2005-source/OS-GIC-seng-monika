@@ -1,0 +1,4 @@
+$ ps --forest -o pid,ppid,stat,args -p 11362,11363
+    PID    PPID STAT COMMAND
+  11362   11346 S+   ./forkchild
+  11363   11362 S+    \_ ./forkchild
