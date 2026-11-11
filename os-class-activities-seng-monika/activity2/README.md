@@ -542,3 +542,48 @@ cd ~/os-gic-seng-monika
 git pull --ff-only origin main
 ls os-class-activities-seng-monika/activity2/
 ```
+
+---
+
+## Screenshot Evidence
+
+The following screenshots document the compilation, execution, and process observations performed for Class Activity 2.
+
+### Task 1 — Linux Process Creation
+
+**Compilation and execution**
+
+![Task 1 Compile and Run](screenshots/task1_compile_run.png)
+
+**Parent-child process tree**
+
+![Task 1 Process Tree](screenshots/task1_process_tree.png)
+
+### Task 2 — Windows Process Creation
+
+**Compilation and execution**
+
+![Task 2 Compile and Run](screenshots/task2_compile_run.png)
+
+**Windows Task Manager — Processes view**
+
+![Task 2 Task Manager Tree](screenshots/task2_taskmanager_tree.png)
+
+**Process relationship evidence**
+
+![Task 2 PID Relationship](screenshots/task2_taskmanager_details.png)
+
+Observed relationship:
+- Parent: winprocess.exe, PID 22716
+- Child: mspaint.exe, PID 21692
+- Child Parent PID: 22716
+
+The Windows process relationship was also verified using PowerShell Get-CimInstance.
+
+### Task 3 — Shared Memory IPC
+
+![Task 3 Compile and Run](screenshots/task3_compile_run.png)
+
+### Task 4 — Message Queue IPC
+
+![Task 4 Compile and Run](screenshots/task4_compile_run.png)
