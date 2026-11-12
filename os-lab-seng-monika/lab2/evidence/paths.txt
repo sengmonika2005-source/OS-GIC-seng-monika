@@ -1,0 +1,4 @@
+step 1: mv "sales north.txt" ../report/
+step 2: mv "$OSLAB_WORKSPACE/lab2/incoming/payroll may.txt" "$OSLAB_WORKSPACE/lab2/reports"
+Error: cat: 'reports/sales north.txt': No such file or directory
+Fix: ../../reports/sales north.txt
